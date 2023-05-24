@@ -1,0 +1,98 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Principal {
+	
+	public static void main(String[] args) throws IOException {
+		
+		// Objeto criado para entrada de dados
+		BufferedReader dados = new BufferedReader(new InputStreamReader(System.in));		
+		
+		/*
+		Criando dois tipos de cursos da maneira manual 
+		Curso c1 = new Curso();
+		c1.cadastrar(1, "Medicina");
+		System.out.println(c1.mostrar());
+		
+		Curso c2 = new Curso();
+		c2.cadastrar(2, "Pedagogia");
+		System.out.println(c2.mostrar());
+		*/
+		
+		// Cria uma lista de objetos
+		ArrayList<Curso> cur = new ArrayList<Curso>();
+		
+		System.out.println("------------------");
+		System.out.println("Cadastro de curos");
+		System.out.println("------------------");
+		
+		int codigo;
+		
+		// While para pegar as informações dos alunos
+		do {
+			System.out.print("Codigo: ");
+			codigo = Integer.parseInt(dados.readLine());
+			
+			if(codigo > 0) {
+				System.out.print("Nome: ");
+				String nome = dados.readLine();
+				
+				// Criação do objeto do tipo Curso
+				Curso c = new Curso();
+				c.cadastrar(codigo, nome);
+			
+				// Adiciona um objeto (c) na lista de objetos (cur)
+				cur.add(c);
+			}
+			
+		} while (codigo > 0);
+		
+		System.out.println("------------------");
+		System.out.println("Listagem de Cursos");
+		System.out.println("------------------");
+		
+		// Lista dos objetos criados 
+		for(int conta = 0; conta < cur.size(); conta++)
+			System.out.println(cur.get(conta).mostrar());
+		
+		// Cria uma lista de objetos
+		ArrayList<Aluno> alu = new ArrayList<Aluno>();
+		
+		System.out.println("------------------");
+		System.out.println("Cadastro de Alunos");
+		System.out.println("------------------");
+		
+		int ra;
+				
+		// While para pegar as informações dos alunos
+		do {
+			System.out.print("RA: ");
+			ra = Integer.parseInt(dados.readLine());
+					
+			if(ra > 0) {
+				System.out.print("Nome: ");
+				String nome = dados.readLine();
+					
+				// Criação do objeto do tipo Curso
+				Aluno a = new Aluno();
+				a.cadastrar(ra, nome);
+					
+				// Adiciona um objeto (c) na lista de objetos (cur)
+				alu.add(a);
+			}
+					
+		} while (ra > 0);
+		
+		System.out.println("------------------");
+		System.out.println("Listagem de Alunos");
+		System.out.println("------------------");
+		
+		// Lista dos objetos criados 
+		for(int conta = 0; conta < alu.size(); conta++)
+			System.out.println(alu.get(conta).mostrar());
+	
+	}
+	
+}

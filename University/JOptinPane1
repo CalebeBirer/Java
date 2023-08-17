@@ -1,0 +1,25 @@
+package Dialogo;
+import javax.swing.JOptionPane;
+
+public class jOption {
+
+	public static void main(String[] args) {
+		String nome = null;
+		int resposta;
+		
+		nome = JOptionPane.showInputDialog("Qual e seu nome");
+		resposta = JOptionPane.showConfirmDialog(null, "O seu nome e :" + nome + "?");
+		
+		if (resposta == JOptionPane.YES_NO_OPTION)	
+		{
+			//verifica se o usuario clicou no botao YES
+			JOptionPane.showMessageDialog(null, "seu nome e " + nome);
+		}
+		else
+		{
+			JOptionPane.showInternalMessageDialog(null, "seu nome nao e " + nome);
+		}
+
+	}
+
+}

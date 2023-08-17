@@ -1,0 +1,32 @@
+package Dialogo;
+import javax.swing.JOptionPane;
+
+public class jOption2 {
+
+	public static void main(String[] args) {
+		
+		Object[] opcao = {"CONTINUE", "CANCEL", "BACK", "OUT"};
+		
+		int op = JOptionPane.showOptionDialog
+				(null, "click ok to continue", "Aviso",
+						JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+							null, opcao, opcao[0]);
+		
+		if (op == 0)
+			JOptionPane.showMessageDialog(null, "did you want CONTINUE"
+					, "Mensage", JOptionPane.WARNING_MESSAGE);
+		
+		if (op == 2)
+			JOptionPane.showMessageDialog(null, "did you want CANCEL"
+					, "Mensage", JOptionPane.WARNING_MESSAGE);
+		
+		if (op == 3)
+			JOptionPane.showMessageDialog(null, "did you want BACK"
+					, "Mensage", JOptionPane.WARNING_MESSAGE);
+		
+		if (op == 3)
+			JOptionPane.showMessageDialog(null, "You are indecisive..."
+					, "Mensage", JOptionPane.WARNING_MESSAGE);
+	}
+
+}

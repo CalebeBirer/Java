@@ -1,0 +1,36 @@
+package Dialogo;
+
+import javax.swing.JOptionPane;
+
+
+public class jOption {
+
+	public static void main(String[] args) {
+		
+		
+		Object[] opcao = {"Diametro", "Circunferencia", "Area"};
+		
+		Double diametro;
+		Double circ, area;
+		String x;
+		
+		
+		x = JOptionPane.showInputDialog("Digite o raio do circulo: ");
+		Double assumi = Double.parseDouble(x);
+		
+		diametro = (2 * assumi);
+		
+		circ = (Double) (2 * Math.PI * assumi);
+		String circFormatado = String.format("%.2f", circ);
+		
+		area = (Math.PI) * (assumi * assumi);
+		String areaFormatado = String.format("%.2f", area);
+		
+		JOptionPane.showMessageDialog(null, "O DIAMETRO E: " + diametro );
+		JOptionPane.showMessageDialog(null, "A CIRCUNFERENCIA E: " + circFormatado );
+		JOptionPane.showMessageDialog(null, "A AREA E: " + areaFormatado );
+		
+	}
+	
+
+}

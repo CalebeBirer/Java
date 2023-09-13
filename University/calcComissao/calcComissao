@@ -1,0 +1,30 @@
+public class calc_comissao {
+
+    public static double valor_comissao(int cod_prod, int quantidade) {
+        double valor_prod = 0;
+        double total = 0;
+
+        if (cod_prod == 1){
+            valor_prod = 239.99;
+        }
+        else if (cod_prod == 2) {
+            valor_prod = 129.75;
+        }
+        else if (cod_prod == 3) {
+            valor_prod = 99.95;
+        }
+        else if (cod_prod == 4) {
+            valor_prod = 350.89;
+        }
+        else {
+            System.out.println("----->CODIGO DO PRODUTO INVALIDO<-----");
+            System.out.println("----->     REPITA A OPERAÇÃO    <-----");
+            valor_prod = 0;
+        }
+
+        total = valor_prod * quantidade;
+
+        return total;
+    }
+    
+}

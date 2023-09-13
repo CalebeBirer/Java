@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class comissao {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);      
+        int continua = 1;
+        double tot_prod = 0;
+
+        System.out.println("---> CALCULO DE COMISSÃO DE VENDEDOR <---");
+        
+        System.out.println("      |-------------------------|");
+        System.out.println("      |    TABELA DE VALORES    |");
+        System.out.println("      |-------------------------|");
+        System.out.println("      | CODIGO PRODUTO | VALOR  |");
+        System.out.println("      | PRODUTO 1 --> R$ 239,99 |");
+        System.out.println("      | PRODUTO 2 --> R$ 129,75 |");
+        System.out.println("      | PRODUTO 3 --> R$  99,95 |");
+        System.out.println("      | PRODUTO 4 --> R$ 350,89 |");
+        System.out.println("      |-------------------------|");
+
+        System.out.println("-------------------------------------");
+        System.out.println("----->DIGITE OS DADOS DA COMPRA<-----");
+
+        while (continua == 1) {
+            System.out.println("-------------------------------------");
+            System.out.print("Digite o codigo do produto (Exemplo: 1): ");
+            int codigo = input.nextInt();
+            System.out.print("Difite a quatidade que foi vendida do produto " + codigo +": ");
+            int qtade = input.nextInt();
+
+            double comissao = calc_comissao.valor_comissao(codigo,qtade);
+            tot_prod += comissao;
+
+            System.out.println("-------------------------------------------------------");
+            System.out.println("O valor total do produto " + codigo + " é de: " + comissao);
+            System.out.println("-------------------------------------------------------");
+
+            System.out.println("Para SIM digite 1 | Para NÃO digite 2: ");
+            System.out.print("Deseja adicioar mais um produto? ");
+            continua = input.nextInt();
+        }
+        System.out.println("Os rendimentos do vendedor é de: " + (200 + (tot_prod / 100) * 9));
+        
+    }
+}
